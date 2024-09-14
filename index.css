@@ -185,14 +185,16 @@ p {
 /* Product Section */
 #products {
     padding: 3rem;
-    background-color: #ffffff;  /* Change to white background */
+    background-color: #ffffff;  /* White background */
+    width: 95vw;  /* Make section cover 95% of the viewport width */
+    margin: 0 auto;  /* Center the section */
 }
 
 /* Product List */
 .product-list {
     display: flex;
     flex-direction: column;
-    gap: 2rem;  /* Add space between products */
+    gap: 2rem;  /* Space between products */
 }
 
 /* Product Card */
@@ -205,9 +207,8 @@ p {
     padding: 2rem;
     transform: translateX(-50px) scale(0.9); /* Initial position and size */
     transition: transform 0.8s ease-out, opacity 0.8s ease-out; /* Smooth transitions */
-    animation: popout 0.8s ease-out; /* Longer duration for animation */
+    animation: popout 1s ease-out; /* Longer duration for animation */
     font-size: 1.5em;
-    
 }
 
 /* Popout Animation when products come into view */
@@ -225,7 +226,7 @@ p {
 /* Ensure animation triggers on scroll */
 .product-card.in-view {
     opacity: 1;
-    transform: translateX(0) scale(1); /* Ensure the final position and size */
+    transform: translateX(0) scale(1); /* Final position and size */
 }
 
 /* Product Description */
@@ -237,13 +238,13 @@ p {
 }
 
 .product-description h4 {
-    font-size: 2.8rem; /* Slightly larger font for titles */
-    color: #449210;; /* Darker shade for better visibility */
+    font-size: 2.8rem; /* Larger font for titles */
+    color: #449210; /* Darker shade for better visibility */
     margin-bottom: 1rem;
 }
 
 .product-description p {
-    font-size: 1.6rem; /* Slightly larger font for better readability */
+    font-size: 1.6rem; /* Larger font for readability */
     color: #424242;
     text-align: justify;
 }
@@ -255,7 +256,7 @@ p {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-left: 2rem;  /* Add padding for better spacing */
+    padding-left: 2rem;  /* Padding for better spacing */
 }
 
 /* Image Styling for Better Aesthetics */
@@ -265,21 +266,27 @@ p {
     border-radius: 16px; /* More rounded corners */
     object-fit: cover;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for a raised effect */
-    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Add smooth hover effect */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth hover effect */
 }
 
 /* Hover Effect on Image */
 .product-info img:hover {
-    transform: scale(1.05);  /* Slight zoom-in effect on hover */
+    transform: scale(1.05);  /* Zoom-in effect on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Deeper shadow on hover */
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    #products {
+        width: 100vw;  /* Full viewport width on mobile */
+        padding: 1rem;  /* Reduce padding */
+    }
+
     .product-card {
         flex-direction: column;
         align-items: flex-start;
-        height: auto;  /* Ensure height adjusts automatically */
+        height: auto;  /* Adjust height automatically */
+        animation: popout-mobile 1s ease-out; /* Adjust animation for mobile */
     }
 
     .product-description {
@@ -294,115 +301,23 @@ p {
     }
 
     .product-info img {
-        width: 100%;  /* Take full width in mobile view */
+        width: 100%;  /* Full width on mobile */
+    }
+}
+
+/* Mobile Popout Animation */
+@keyframes popout-mobile {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9); /* Slide up and scale */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1); /* End at the normal position and size */
     }
 }
 
 
-/* Problems and Solutions Section */
-#problems-solutions {
-    padding: 2rem 0;
-    background-color: #f9f9f9;
-}
-
-#problems-solutions h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    color: #333; /* Adjusted color for better readability */
-}
-
-/* Problem and Solution List */
-.problem-solution-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Problem-Solution Card */
-.problem-solution-card {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch; /* Stretch items to fill height */
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 1rem 0;
-    overflow: hidden;
-    width: 100%; /* Fill the width of the container */
-    max-width: 100%; /* Ensure full width on all screens */
-    height: 500px; /* Increased height of each card */
-}
-
-/* Text Content */
-.text-content {
-    padding: 1rem;
-    flex: 1;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    overflow: hidden; /* Ensure no overflow */
-}
-
-.text-content h4 {
-    margin-top: 0.5rem;
-    font-size: 1.25rem;
-    color: #449210;; /* Darker color for titles */
-}
-
-.text-content p {
-    font-size: 1rem;
-    color: #666;
-    margin-top: 0.5rem;
-}
-
-/* Image Content */
-.image-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Set a fixed size for the images and ensure they fit within their container */
-.image-content img {
-    width: 400px; /* Fixed width for images */
-    height: 300px; /* Fixed height for images */
-    object-fit: cover; /* Ensure images cover the container without distortion */
-    border-radius: 8px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .problem-solution-card {
-        flex-direction: column;
-        width: 90%;
-        height: auto; /* Adjust height automatically on smaller screens */
-    }
-
-    .text-content {
-        text-align: center;
-    }
-
-    .image-content {
-        margin-top: 1rem;
-    }
-    
-    .image-content img {
-        width: 100%; /* Make images responsive on smaller screens */
-        height: auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .problem-solution-card {
-        width: 100%;
-    }
-}
 
 /* Contact Section */
 #contact {
