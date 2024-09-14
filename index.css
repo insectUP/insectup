@@ -23,7 +23,7 @@ h1 {
 
 h2 {
     font-size: 2rem;
-    color: #00796b;
+    color: #449210;
 }
 
 p {
@@ -49,7 +49,7 @@ p {
 .navbar .nav-links {
     display: none;
     flex-direction: column;
-    background-color: #004d40;
+    background-color: #449210;
     position: absolute;
     right: 0;
     top: 60px;
@@ -134,8 +134,44 @@ p {
 }
 
 .home-section .overlay {
-    background: rgba(0, 0, 0, 0.007);
+    background: linear-gradient(135deg, #4ca7fc, #0bb430); /* Slightly adjusted colors */
+    /* Original gradient */
+; /* Vibrant color gradient */
     padding: 2rem;
+    border-radius: 50px; /* Slightly reduce the border-radius for a more modern feel */
+    position: relative;
+    animation: pulse 2s infinite ease-in-out; /* Animation running every 2 seconds */
+    transition: transform 0.5s ease-in-out; /* Smooth transition on hover */
+}
+
+/* Add a subtle glow effect */
+.home-section .overlay:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 10px 20px rgba(255, 75, 43, 0.5); /* Vibrant shadow for hover effect */
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+}
+/* Repositioning the overlay */
+.home-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height for a centered look */
+    
 }
 
 /* Section Styles */
@@ -202,7 +238,7 @@ p {
 
 .product-description h4 {
     font-size: 2.8rem; /* Slightly larger font for titles */
-    color: #004d40; /* Darker shade for better visibility */
+    color: #449210;; /* Darker shade for better visibility */
     margin-bottom: 1rem;
 }
 
@@ -312,7 +348,7 @@ p {
 .text-content h4 {
     margin-top: 0.5rem;
     font-size: 1.25rem;
-    color: #004d40; /* Darker color for titles */
+    color: #449210;; /* Darker color for titles */
 }
 
 .text-content p {
@@ -452,7 +488,7 @@ p {
 
 /* Footer */
 footer {
-    background-color: #0c5805;
+    background-color: #06750b;;
     color: #fff;
     padding: 2rem;
     text-align: center;
@@ -500,7 +536,7 @@ footer {
     .navbar .nav-links {
         display: none;
         flex-direction: column;
-        background-color: #004d40;
+        background-color: #449210;;
         position: absolute;
         right: 0;
         top: 60px;
@@ -668,4 +704,46 @@ footer {
 body {
     background-color: #f4f4f9;
     color: #f7f5f5;
+}
+/* Base styles for the overlay */
+.overlay {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b); /* Vibrant color gradient */
+    padding: 2rem;
+    border-radius: 50px; /* Slightly reduce the border-radius for a more modern feel */
+    position: relative;
+    animation: pulse 2s infinite ease-in-out; /* Animation running every 2 seconds */
+    transition: transform 0.5s ease-in-out; /* Smooth transition on hover */
+    text-align: center; /* Center the text */
+}
+
+/* Base styles for h1 */
+.overlay h1 {
+    color: white; /* Text color */
+    font-size: 2rem; /* Font size for h1 */
+    margin: 0; /* Remove default margin */
+    line-height: 1.2; /* Line height for better readability */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .overlay {
+        padding: 1.5rem; /* Reduce padding */
+        border-radius: 30px; /* Slightly reduce the border-radius */
+    }
+
+    .overlay h1 {
+        font-size: 1.5rem; /* Reduce font size for h1 */
+    }
+}
+
+@media (max-width: 480px) {
+    .overlay {
+        padding: 1rem; /* Further reduce padding */
+        border-radius: 20px; /* Further reduce the border-radius */
+    }
+
+    .overlay h1 {
+        font-size: 1.2rem; /* Further reduce font size for h1 */
+        line-height: 1.4; /* Adjust line height */
+    }
 }
