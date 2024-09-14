@@ -84,7 +84,7 @@ p {
 .hamburger .bar {
     width: 25px;
     height: 3px;
-    background-color: white;
+    background-color: rgb(15, 146, 22);
     margin: 4px;
     transition: all 0.3s ease;
 }
