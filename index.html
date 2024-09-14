@@ -25,7 +25,6 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#products">Products</a></li>
-            <li><a href="#problems-solutions">Problems & Solutions</a></li>
             <li><a href="#contact">Contact Us</a></li>
         </ul>
         <div class="hamburger">
@@ -55,6 +54,40 @@
         </div>
     </section>
 
+    <section id="our-insects">
+        <div class="insect-content">
+            <h2>Our Insects: Black Soldier Fly Larvae</h2>
+            <p>
+                At Insectup, we harness the power of nature’s recyclers – Black Soldier Fly Larvae (BSFL). 
+                These incredible creatures convert organic waste into valuable nutrients, 
+                providing sustainable solutions to waste management and food production.
+            </p>
+            <p>
+                Our BSFL activities focus on waste treatment, nutrient recycling, and eco-friendly production methods 
+                that contribute to a circular economy. By partnering with nature, 
+                we reduce waste, create organic fertilizers, and provide high-protein insect feed.
+            </p>
+        </div>
+    
+        <div class="image-gallery">
+            <div class="image-container">
+                <img src="https://i.ibb.co/rZJrb2z/Whats-App-Image-2024-09-14-at-16-28-50-d9ed3c53.jpg" alt="Waste Treatment Process">
+                <div class="image-caption">Black soldier fly Facility</div>
+            </div>
+    
+            <div class="image-container">
+                <img src="https://i.ibb.co/Dpzttsv/Whats-App-Image-2024-09-14-at-16-28-51-4ecf032c.jpg" alt="Nutrient Recycling">
+                <div class="image-caption">BSF Eggs</div>
+            </div>
+    
+            <div class="image-container">
+                <img src="https://i.ibb.co/fMzqLsL/Whats-App-Image-2024-09-14-at-16-33-50-33e78bdc.jpg" alt="Organic Fertilizer Production">
+                <div class="image-caption">Larvae</div>
+            </div>
+        </div>
+    </section>
+    
+    
     <!-- Product Section -->
 <section id="products">
     <div class="container">
@@ -329,6 +362,43 @@ window.addEventListener('scroll', function() {
         handleScroll();
     });
     </script>
+
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+    
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        let dots = document.getElementsByClassName("dot");
+        
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+    }
+    </script>
+    
 </body>
 
 </html>
