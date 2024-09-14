@@ -186,8 +186,9 @@ p {
 #products {
     padding: 3rem;
     background-color: #ffffff;  /* White background */
-    width: 95vw;  /* Make section cover 95% of the viewport width */
+    width: 99vw;  /* Make section cover 99% of the viewport width */
     margin: 0 auto;  /* Center the section */
+    box-sizing: border-box;  /* Ensure padding is included in the width calculation */
 }
 
 /* Product List */
@@ -280,6 +281,7 @@ p {
     #products {
         width: 100vw;  /* Full viewport width on mobile */
         padding: 1rem;  /* Reduce padding */
+        box-sizing: border-box; /* Ensure padding is included in the width calculation */
     }
 
     .product-card {
