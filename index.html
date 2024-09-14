@@ -35,7 +35,7 @@
     </nav>
 
     <!-- Home Section -->
-    <header id="home" class="home-section" >
+    <header id="home" class="home-section">
         <div class="overlay">
             <h1>Accelerating Agricultural Productivity <br> 
             </h1>
@@ -45,7 +45,7 @@
 
     <!-- About Section -->
     <section id="about">
-        <div class="container" class="section-pop" >
+        <div class="container">
             <h2>About Us</h2>
             <p>At InsectUp, we believe in nature's power to transform agriculture. Our solutions focus on increasing agricultural
                 productivity, reducing waste, and creating sustainable insect-based products using Black Soldier Fly larvae.
@@ -54,8 +54,7 @@
         </div>
     </section>
 
-    <section id="our-insects" class="section-pop" >
-    <section id="our-insects" >
+    <section id="our-insects">
         <div class="insect-content">
             <h2>Our Insects: Black Soldier Fly Larvae</h2>
             <p>
@@ -90,7 +89,7 @@
     
     
     <!-- Product Section -->
-<section id="products" class="section-pop">
+<section id="products">
     <div class="container">
         <h2>Our Products</h2>
         <div class="product-list">
@@ -143,7 +142,7 @@
 
 
 <!-- Contact Section -->
-<section id="contact" class="section-pop">
+<section id="contact">
     <div class="container">
         <h2>Contact Us</h2>
         <form id="form" class="contact-form">
@@ -172,6 +171,7 @@
         <p>Located; Mbezi Makabe ,Dar es Salaam</p>
         <p>Email: <a href="mailto:insectupafrica@gmail.com">insectupafrica@gmail.com</a> | Phone: <a href="tel:+255621667315">+255-621-667-315</a></p>
         <p>Follow us on social media: 
+           , 
             <a href="#" class="https://www.linkedin.com/company/insectup/">linkedin</a>, 
             <a href="#" class="https://www.instagram.com/insectup_?igsh=MWo1d2Fscm1ycjRuOQ==">Instagram</a>
         </p>
@@ -361,29 +361,7 @@ window.addEventListener('scroll', function() {
     </script>
 
 
-<script>
-   (function() {
-    // Select all sections with the class "section-pop"
-    const sections = document.querySelectorAll('.section-pop');
 
-    // Create an IntersectionObserver to detect when the section is in the viewport
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show'); // Add the "show" class when the section is visible
-            } else {
-                entry.target.classList.remove('show'); // Optionally remove the "show" class when out of view
-            }
-        });
-    }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
-
-    // Observe each section
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-})();
-
-    </script>
     
 </body>
 
