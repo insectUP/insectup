@@ -779,8 +779,8 @@ body {
     /* Adjust image size */
     .image-container {
         width: 100%;  /* Make the images take full width */
-        max-width: 300px;  /* Set a maximum width */
-        margin-bottom: 1.5rem;
+        max-width: 450px;  /* Set a maximum width */
+        margin-bottom: 0.5rem;
     }
 
     .image-container img {
