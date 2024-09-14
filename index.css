@@ -149,7 +149,7 @@ p {
 /* Product Section */
 #products {
     padding: 3rem;
-    background-color: #e0f7fa;
+    background-color: #ffffff;  /* Change to white background */
 }
 
 /* Product List */
@@ -171,6 +171,7 @@ p {
     transition: transform 0.8s ease-out, opacity 0.8s ease-out; /* Smooth transitions */
     animation: popout 0.8s ease-out; /* Longer duration for animation */
     font-size: 1.5em;
+    
 }
 
 /* Popout Animation when products come into view */
@@ -218,39 +219,24 @@ p {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding-left: 2rem;  /* Add padding for better spacing */
 }
 
+/* Image Styling for Better Aesthetics */
 .product-info img {
-    width: 85%; /* Increase image size for better impact */
+    width: 90%; /* Slightly larger image for impact */
     height: auto;
-    border-radius: 12px; /* More rounded corners for a modern look */
+    border-radius: 16px; /* More rounded corners */
     object-fit: cover;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for a raised effect */
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Add smooth hover effect */
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .product-card {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;  /* Ensure height adjusts automatically */
-    }
-
-    .product-description {
-        max-width: 100%;
-        padding-right: 0;
-        text-align: center;
-    }
-
-    .product-info {
-        margin-top: 1rem;
-        max-width: 100%;
-    }
-
-    .product-info img {
-        width: 100%;  /* Take full width in mobile view */
-    }
+/* Hover Effect on Image */
+.product-info img:hover {
+    transform: scale(1.05);  /* Slight zoom-in effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  /* Deeper shadow on hover */
 }
-
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -310,25 +296,6 @@ p {
     width: 100%; /* Fill the width of the container */
     max-width: 100%; /* Ensure full width on all screens */
     height: 500px; /* Increased height of each card */
-    transform: scale(0.9);
-    opacity: 0;
-    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-    /* Animation triggered by JavaScript */
-}
-
-.problem-solution-card.in-view {
-    animation: popIn 0.6s ease-out forwards;
-}
-
-@keyframes popIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9) translateY(20px); /* Start with a slight downward slide */
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0); /* End at normal position */
-    }
 }
 
 /* Text Content */
@@ -697,4 +664,8 @@ footer {
     .product-description p {
         font-size: 1rem;
     }
+}
+body {
+    background-color: #f4f4f9;
+    color: #f7f5f5;
 }
